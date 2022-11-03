@@ -17,6 +17,7 @@ export default function () {
         <span className="high-temp">H: 24℃</span>
         <span className="low-temp">L: 18℃</span>
       </div>
+      <div className="forecast">04 nov</div>
     </div>
   );
 }

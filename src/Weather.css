@@ -53,3 +53,13 @@
 .Weather-app .low-temp {
   margin-left: 18px;
 }
+
+.Weather-app .forecast {
+  width: 60px;
+  height: 146px;
+
+  background: rgba(72, 49, 157, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25), inset 1px 1px 0px #ffffff;
+  border-radius: 30px;
+}
