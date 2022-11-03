@@ -1,0 +1,55 @@
+.Weather-app {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.Weather-app input {
+  background: linear-gradient(
+    180deg,
+    rgba(46, 51, 90, 1) -4.68%,
+    rgba(28, 27, 51, 1) 95.45%
+  );
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(28, 27, 51, 1);
+  border-radius: 10px;
+  width: 358px;
+  height: 46px;
+  padding: 7px 8px;
+  margin: 30px 16px;
+}
+
+.Weather-app input::placeholder {
+  color: #e0d9ff;
+}
+
+.Weather-app .city {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.374px;
+  margin-bottom: 12px;
+}
+.Weather-app .temperature {
+  font-size: 96px;
+  line-height: 70px;
+  letter-spacing: 0.374px;
+  margin-bottom: 12px;
+}
+.Weather-app .main {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 3px;
+  color: rgba(235, 235, 245, 0.6);
+}
+.Weather-app .temp-h-l {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+}
+
+.Weather-app .low-temp {
+  margin-left: 18px;
+}
