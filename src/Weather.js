@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./Weather.css";
 
-export default function () {
+export default function Weather() {
   let [weather, setWeather] = useState({ ready: false });
 
   function showWeather(response) {
