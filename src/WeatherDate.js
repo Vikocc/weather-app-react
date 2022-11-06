@@ -1,8 +1,12 @@
 import React from "react";
+import LastUpdate from "./LastUpdate";
 
 export default function WeatherDate(props) {
   return (
     <div className="WeatherDate">
+      <div className="lastUpdated">
+        <LastUpdate information={props.date.date} />
+      </div>
       <div className="city">{props.date.name}</div>
       <div className="temperature">{props.date.temperature}</div>
       <div className="main">{props.date.main}</div>
