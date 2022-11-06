@@ -10,7 +10,7 @@ export default function WeatherDate(props) {
         <span className="max-temp">H: {props.date.maxTemp}℃</span>
         <span className="min-temp">L: {props.date.minTemp}℃</span>
       </div>
-      <img src={props.date.icon} className="icon" />
+      <img src={props.date.icon} className="icon" alt={props.date.main} />
       <div className="forecast">04 nov</div>
     </div>
   );

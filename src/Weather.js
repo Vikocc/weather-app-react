@@ -8,6 +8,7 @@ export default function Weather() {
   let [city, setCity] = useState("Tokyo");
 
   function showWeather(response) {
+    console.log(response);
     setWeather({
       ready: true,
       name: response.data.city,
