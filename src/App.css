@@ -2,5 +2,11 @@
   background-image: url("./image/Mountain.png");
   width: 390px;
   height: 800px;
-  margin: 0;
+  margin: 0 auto;
+}
+@media (max-width: 560px) {
+  .App {
+    margin: 0;
+    width: 100%;
+  }
 }
