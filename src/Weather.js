@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import { WeatherDate } from "./WeatherDate";
+import WeatherDate from "./WeatherDate";
 
 export default function Weather() {
   let [weather, setWeather] = useState({ ready: false });
