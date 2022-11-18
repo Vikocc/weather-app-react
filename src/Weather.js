@@ -8,7 +8,6 @@ export default function Weather() {
   let [city, setCity] = useState("Tokyo");
 
   function showWeather(response) {
-    console.log(new Date(response.data.daily[0].time * 1000));
     setWeather({
       ready: true,
       date: new Date(response.data.daily[0].time * 1000),

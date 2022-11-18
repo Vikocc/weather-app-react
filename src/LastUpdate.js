@@ -1,8 +1,14 @@
 import React from "react";
+
 export default function LastUpdate(props) {
   let hour = props.information.getHours();
-
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minute = props.information.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
 
   let days = [
     "Sunday",
@@ -33,5 +39,9 @@ export default function LastUpdate(props) {
   ];
   let month = months[props.information.getMonth()];
 
-  return `Last update: ${hour}:${minute}, ${day}, ${date} ${month}`;
+  return (
+    <span>
+      Last update: {hour}:{minute}, {day}, {date} {month}
+    </span>
+  );
 }
