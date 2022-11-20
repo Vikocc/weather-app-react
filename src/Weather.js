@@ -10,7 +10,7 @@ export default function Weather() {
   function showWeather(response) {
     setWeather({
       ready: true,
-      date: new Date(response.data.daily[0].time * 1000),
+      date: new Date(),
       name: response.data.city,
       temperature: Math.round(response.data.daily[0].temperature.day),
       minTemp: Math.round(response.data.daily[0].temperature.minimum),
