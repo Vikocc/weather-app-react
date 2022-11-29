@@ -2,23 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherDate from "./WeatherDate";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather() {
   let [weather, setWeather] = useState({ ready: false });
   let [city, setCity] = useState("Tokyo");
-
-  function showWeather(response) {
-    setWeather({
-      ready: true,
-      date: new Date(),
-      name: response.data.city,
-      temperature: Math.round(response.data.daily[0].temperature.day),
-      minTemp: Math.round(response.data.daily[0].temperature.minimum),
-      maxTemp: Math.round(response.data.daily[0].temperature.maximum),
-      main: response.data.daily[0].condition.description,
-      icon: `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
-    });
-  }
 
   function search() {
     let key = "37do4ft2cfe4091641be09b5a6ea838c";
@@ -35,6 +23,20 @@ export default function Weather() {
     setCity(event.target.value);
   }
 
+  function showWeather(response) {
+    console.log(response.data.city);
+    setWeather({
+      ready: true,
+      date: new Date(),
+      name: response.data.city,
+      temperature: Math.round(response.data.daily[0].temperature.day),
+      minTemp: Math.round(response.data.daily[0].temperature.minimum),
+      maxTemp: Math.round(response.data.daily[0].temperature.maximum),
+      main: response.data.daily[0].condition.description,
+      icon: `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
+    });
+  }
+
   if (weather.ready) {
     return (
       <div className="Weather-app">
@@ -46,6 +48,7 @@ export default function Weather() {
           ></input>
         </form>
         <WeatherDate date={weather} />
+        <WeatherForecast newCity={weather.name} />
       </div>
     );
   } else {

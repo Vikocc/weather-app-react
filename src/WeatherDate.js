@@ -17,7 +17,6 @@ export default function WeatherDate(props) {
 
       <div className="main">{props.date.main}</div>
       <img src={props.date.icon} className="icon" alt={props.date.main} />
-      <div className="forecast">04 nov</div>
     </div>
   );
 }
