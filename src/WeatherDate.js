@@ -9,11 +9,7 @@ export default function WeatherDate(props) {
         <LastUpdate information={props.date.date} />
       </div>
       <div className="city">{props.date.name}</div>
-      <Temperature
-        mainTemperture={props.date.temperature}
-        maxTemperture={props.date.maxTemp}
-        minTemperture={props.date.minTemp}
-      />
+      <Temperature mainTemperture={props.date.temperature} />
 
       <div className="main">{props.date.main}</div>
       <img src={props.date.icon} className="icon" alt={props.date.main} />

@@ -58,16 +58,6 @@
   letter-spacing: 1px;
   color: rgba(235, 235, 245, 0.6);
 }
-.Weather-app .temp-h-l {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  color: white;
-}
-
-.Weather-app .min-temp {
-  margin-left: 18px;
-}
 
 .Weather-app .forecast {
   width: 63px;

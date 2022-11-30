@@ -25,16 +25,11 @@ export default function DisplayTemperture(props) {
             </a>
           </span>
         </div>
-        <div className="temp-h-l">
-          <span className="max-temp">H: {props.maxTemperture}</span>
-          <span className="min-temp">L: {props.minTemperture}</span>
-        </div>
       </div>
     );
   } else {
     let main = Math.round(props.mainTemperture * 1.8 + 32);
-    let max = Math.round(props.maxTemperture * 1.8 + 32);
-    let min = Math.round(props.minTemperture * 1.8 + 32);
+
     return (
       <div>
         {" "}
@@ -46,10 +41,6 @@ export default function DisplayTemperture(props) {
             </a>
             | ℉
           </span>
-        </div>
-        <div className="temp-h-l">
-          <span className="max-temp">H: {max}</span>
-          <span className="min-temp">L: {min}</span>
         </div>
       </div>
     );

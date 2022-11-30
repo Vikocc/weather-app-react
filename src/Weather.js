@@ -8,9 +8,21 @@ export default function Weather() {
   let [weather, setWeather] = useState({ ready: false });
   let [city, setCity] = useState("Tokyo");
 
+  function showWeather(response) {
+    setWeather({
+      ready: true,
+      coordinates: response.data.coordinates,
+      date: new Date(),
+      name: response.data.city,
+      temperature: Math.round(response.data.temperature.current),
+      main: response.data.condition.description,
+      icon: response.data.condition.icon_url,
+    });
+  }
+
   function search() {
     let key = "37do4ft2cfe4091641be09b5a6ea838c";
-    let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}`;
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}`;
     axios.get(url).then(showWeather);
   }
 
@@ -21,20 +33,6 @@ export default function Weather() {
 
   function cityWeather(event) {
     setCity(event.target.value);
-  }
-
-  function showWeather(response) {
-    console.log(response.data.city);
-    setWeather({
-      ready: true,
-      date: new Date(),
-      name: response.data.city,
-      temperature: Math.round(response.data.daily[0].temperature.day),
-      minTemp: Math.round(response.data.daily[0].temperature.minimum),
-      maxTemp: Math.round(response.data.daily[0].temperature.maximum),
-      main: response.data.daily[0].condition.description,
-      icon: `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
-    });
   }
 
   if (weather.ready) {
@@ -48,7 +46,7 @@ export default function Weather() {
           ></input>
         </form>
         <WeatherDate date={weather} />
-        <WeatherForecast newCity={weather.name} />
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
