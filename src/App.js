@@ -5,9 +5,11 @@ function App() {
   return (
     <div className="App">
       <Weather />
-      <a href="https://github.com/Vikocc/weather-app-react">
-        Open source GitHub
-      </a>
+      <div className="source">
+        <a href="https://github.com/Vikocc/weather-app-react">
+          Open source GitHub
+        </a>
+      </div>
     </div>
   );
 }
